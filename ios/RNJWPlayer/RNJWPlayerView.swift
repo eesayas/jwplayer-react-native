@@ -769,6 +769,9 @@ class RNJWPlayerView : UIView, JWPlayerDelegate, JWPlayerStateDelegate, JWAdDele
             playerViewController.view.frame = self.frame
             self.addSubview(playerViewController.view)
             playerViewController.setDelegates()
+
+            // TODO: Pass stretching config from React Native
+            playerViewController.playerView.videoGravity = .resizeAspectFill    
         }
 
         if let ib = config["interfaceBehavior"] as? String {
